@@ -1,0 +1,330 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: #2d2d2d;
+      background-color: #fffafc;
+    }
+
+    /* Loader */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .spinner {
+      border: 6px solid #f3e5f5;
+      border-top: 6px solid #e91e63;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+
+    nav h1 {
+      color: #e91e63;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #e91e63;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 90vh;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: rgb(212, 126, 193);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .hero p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      background: #e91e63;
+      color: white;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background: #d81b60;
+    }
+
+    /* Carousel */
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;     /* optional */
+  height: 500px;          /* set a suitable height for your images */
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff; /* or #fce4ec to match theme */
+  text-align: center;
+}
+
+.carousel img {
+  width: auto;
+  height:auto;          /* ✅ fit vertically */
+  object-fit: contain;    /* ✅ show whole image, no crop */
+  display: inline-block;
+}
+
+
+    /* .carousel {
+      width: 80%;
+      margin: 50px auto;
+      overflow: -moz-hidden-unscrollable;
+      border-radius: 10px;
+      position: relative;
+    } */
+
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide div {
+      min-width: 100%;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e91e63;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Stats */
+    .stats {
+      background: #fce4ec;
+      display: flex;
+      justify-content: space-around;
+      padding: 50px 0;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat h2 {
+      font-size: 2rem;
+      color: #e91e63;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: #fff0f6;
+      padding: 60px;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      margin-bottom: 30px;
+    }
+
+    .testimonial {
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #e91e63;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Popup */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .popup-content button {
+      margin-top: 15px;
+      background: #e91e63;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .carousel {
+  width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide div {
+  min-width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e91e63;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+#aboutPopup {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fff0f5;
+  color: #333;
+}
+
+.about h2 {
+  font-size: 2.2em;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
